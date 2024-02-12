@@ -5,15 +5,20 @@ team2 = []
 
 def baseSetup():
     global team1, team2
+    found = 0
     while True:
-        pokemon = input("Please enter the name of a Pokemon: ")
+        pokemon = input(f"Please enter the name of a Pokemon {len(team1)}/8: ")
 
         with open('cleanPokemon.csv', 'r') as file:
             reader = csv.reader(file)
             for i in reader:
                 if i[1].lower() == pokemon.lower():
+                    found += 1
                     team1.append(i)
                     break
+            if found == 0:
+                print("Pokemon not found!")
+            found = 0
             if len(team1) == 8:
                 break
     
@@ -47,7 +52,8 @@ def switchTurn(turn: int):
     return turn
 
 if __name__ == "__main__":
-    #baseSetup()
+    baseSetup()
     turn = 0
+    
     #todo Add the turn based battle system
     
