@@ -39,7 +39,15 @@ def baseSetup():
         print(i[1])
     print("\n\n")
 
+def switchTurn(turn: int):
+    if turn == 0:
+        turn = 1
+        return turn
+    turn = 0
+    return turn
+
 if __name__ == "__main__":
-    baseSetup()
+    #baseSetup()
+    turn = 0
     #todo Add the turn based battle system
     
