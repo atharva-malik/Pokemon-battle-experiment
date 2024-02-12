@@ -1,8 +1,10 @@
 import csv
 
-if __name__ == "__main__":
-    team1 = []
-    team2 = []
+team1 = []
+team2 = []
+
+def baseSetup():
+    global team1, team2
     while True:
         pokemon = input("Please enter the name of a Pokemon: ")
 
@@ -36,3 +38,8 @@ if __name__ == "__main__":
     for i in team2:
         print(i[1])
     print("\n\n")
+
+if __name__ == "__main__":
+    baseSetup()
+    #todo Add the turn based battle system
+    
