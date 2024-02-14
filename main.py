@@ -1,5 +1,14 @@
 import csv
 
+# Garchomp
+# Salamence
+# Mega Charizard Y
+# Mega Charizard X
+# Dragonite
+# Mega Rayquaza
+# Mega Mewtwo X
+# Mega Mewtwo Y
+
 team1 = []
 team2 = []
 
@@ -43,6 +52,23 @@ def baseSetup():
     for i in team2:
         print(i[1])
     print("\n\n")
+    
+    for i in range(len(team1)):
+        team1[i] = convertToDict(team1[i])
+    for i in range(len(team2)):
+        team2[i] = convertToDict(team2[i])
+
+def convertToDict(pokemon: list):
+    pokemonList = ["Number", "Name", "Type 1", "Type 2", "Abilities", "HP", "Att", "Def", "Special attack", "Special defence", "Speed", "BST", "Mean", "Standard Deviation", "Generation", "Experience type", 
+                   "Experience to level 100", "Final Evolution", "Catch Rate", "Legendary", "Mega Evolution", "Alolan Form", "Galarian Form", "Against Normal", 
+                   "Against Fire", "Against Water", "Against Electric", "Against Grass", "Against Ice", "Against Fighting", "Against Poison", "Against Ground", 
+                   "Against Flying", "Against Psychic", "Against Bug", "Against Rock", "Against Ghost", "Against Dragon",  "Against Dark", "Against Steel", "Against Fairy", "Height", "Weight", "BMI"]
+    pokemonDict = {}
+    index = 0
+    for i in pokemonList:
+        pokemonDict[i] = pokemon[index]
+        index += 1
+    return pokemonDict
 
 def switchTurn(turn: int):
     if turn == 0:
